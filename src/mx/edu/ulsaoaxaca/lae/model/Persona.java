@@ -12,10 +12,16 @@ public class Persona {
 	public Persona() {
 		
 	}
-	  
+	
 	public Persona(Integer id, String nombres, String apellidos, Date fechaNacimiento) {
-		super();
 		this.id = id;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	
+	
+	public Persona(String nombres, String apellidos, Date fechaNacimiento) {
 		this.nombres = nombres;
 		this.apellidos = apellidos;
 		this.fechaNacimiento = fechaNacimiento;

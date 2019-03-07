@@ -1,6 +1,7 @@
 package mx.edu.ulsaoaxaca.lae;
 
 import java.io.InputStream;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -31,12 +32,23 @@ public class MainMyBatis {
 		SqlSession session = sqlSessionFactory.openSession();
 		
 		PersonaMapper personaMapper = session.getMapper(PersonaMapper.class);
+		
+		/*
 		List<Persona> personas = personaMapper.listar();
 		
 		for(Persona persona: personas) {
 			System.out.println(persona.getNombres());
 		}
+		*/
 		
+		
+		//Insertar 
+		Persona persona = new Persona("Itzel", "Chincoya", new Date());
+		
+		personaMapper.insertPersona(persona);
+		System.out.println("Insertado");
+		
+		session.commit();
 		session.close();
 	}
 }
